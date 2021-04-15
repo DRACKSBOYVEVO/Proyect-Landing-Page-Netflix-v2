@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Netflix | Landing Page UI Design</title>
+    <!--https://fontawesome.com/v4.7.0/icons/ para los iconos de fontawesome-->
+    <!--https://www.bootstrapcdn.com/fontawesome/-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <!---->
+    <!--Navigation start-->
+    <header>
+        <a href="#" class="logo" ><img src="images/logo-netflix.png" width="130" height="60" alt="Logo Netflix"></a>
+        <ul class="navigation">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Series TV</a></li>
+            <li><a href="#">Peliculas</a></li>
+            <li><a href="#">Tendencias</a></li>
+            <li><a href="#">Mi Lista</a></li>
+        </ul>
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+    </header>
+    <!--Navigation stop-->
+    <div class="banner">
+        <img class="bg" src="images/bg.jpg" alt="Imagen de fondo" >
+        <div class="content">
+            <img class="serie" src="images/logo-serie.png" alt="">
+            <h4>
+                <span>2021</span>
+                <span><i>+16</i></span>
+                <span>1h 53m</span>
+                <span>Película</span>
+                <span>Acción, Ciencia ficción</span>
+            </h4>
+            <p>
+                <b>Descripción general</b> <br>
+                En una época en la que los monstruos caminan por la Tierra, la lucha de la humanidad por su
+                futuro coloca a Godzilla y Kong en un curso de colisión que verá a las dos fuerzas de la
+                naturaleza más poderosas del planeta chocar en una batalla espectacular para todas las edades.
+            </p>
+            <div class="buttons">
+                <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Ver ahora</a>
+                <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Agregar a mi lista</a>
+            </div>
+        </div>
+        <a class="play" onclick="toggleVideo();"><img src="images/play.png" alt="Ver trailer">Reproducir tráiler</a>
+    </div>
+
+    <div class="trailer">
+        <video src="trailer.mp4" controls="true" autoplay="true"></video>
+        <img class="close" onclick="toggleVideo();" src="images/cancel.png" alt="boton cerrar">
+    </div>
+
+    <script>
+        function toggleVideo(){
+            const trailer = document.querySelector('.trailer');
+            const video = document.querySelector('video');
+            trailer.classList.toggle('active')
+            video.currentTime = 0;
+            video.pause();
+        }
+    </script>
+</body>
+</html>
